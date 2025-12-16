@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { AppMode, PatientProfile, NutritionalStats, DailyPlan, PatientRecord } from './types';
 import { analyzePatientProfile, generateDailyPlan } from './services/gemini';
 import { savePatientRecord, getPatientHistory, deletePatientRecord } from './services/storage';
@@ -484,6 +485,8 @@ const App: React.FC = () => {
            </main>
         </>
       )}
+
+      <Analytics />
     </div>
   );
 };
